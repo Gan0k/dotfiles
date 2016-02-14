@@ -1,0 +1,6 @@
+[submodule ".vim/plugged/simplenote.vim"]
+	path = .vim/plugged/simplenote.vim
+	url = https://github.com/mrtazz/simplenote.vim.git
+[submodule ".vim/plugged/vim-trailing-whitespace"]
+	path = .vim/plugged/vim-trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace.git
