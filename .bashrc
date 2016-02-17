@@ -71,7 +71,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-function search() { find . -iname "*$@*" | less; }
+function search() { find . -iname "*$@*" | cat; }
 
 #apt-history command
 function apt-history(){
