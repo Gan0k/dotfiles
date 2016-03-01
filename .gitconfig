@@ -4,7 +4,7 @@
 
 [core]
 	editor = vim
-	whitespace=-indent-with-non-tab,tab-in-indent,trailing-space,tabwidth=4
+	whitespace=-indent-with-non-tab,trailing-space,tabwidth=4
 
 [color]
 	ui = true
