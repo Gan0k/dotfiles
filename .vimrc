@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'mrtazz/simplenote.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
