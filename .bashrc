@@ -19,6 +19,13 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# Prepend cd to directory names automatically
+shopt -s autocd
+# Correct spelling errors during tab-completion
+shopt -s dirspell
+# Correct spelling errors in arguments supplied to cd
+shopt -s cdspell
+
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
