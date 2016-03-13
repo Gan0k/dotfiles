@@ -70,6 +70,9 @@ noremap <leader>P o<esc>:set paste<cr>:.!xsel -po<cr>:set nopaste<cr>
 " Do not replace buffer contents when pasting
 xnoremap p pgvy
 
+" Search visually selected text
+vnoremap // y/<C-R>"<CR>
+
 " Toggle Hexmode command
 command -bar Hexmode call ToggleHex()
 function ToggleHex()
