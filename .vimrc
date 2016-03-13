@@ -67,6 +67,9 @@ noremap <leader>y :silent w !xsel -bi<cr>
 noremap <leader>p o<esc>:set paste<cr>:.!xsel -bo<cr>:set nopaste<cr>
 noremap <leader>P o<esc>:set paste<cr>:.!xsel -po<cr>:set nopaste<cr>
 
+" Do not replace buffer contents when pasting
+xnoremap p pgvy
+
 " Toggle Hexmode command
 command -bar Hexmode call ToggleHex()
 function ToggleHex()
