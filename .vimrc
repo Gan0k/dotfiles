@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'mrtazz/simplenote.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
@@ -72,6 +73,9 @@ xnoremap p pgvy
 
 " Search visually selected text
 vnoremap // y/<C-R>"<CR>
+
+" Set refresh time higher for vim-gitgutter
+set updatetime=250
 
 " Toggle Hexmode command
 command -bar Hexmode call ToggleHex()
