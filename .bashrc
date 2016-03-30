@@ -244,5 +244,6 @@ transfer() {
 openDocx() {
     GDOCS='https://docs.google.com/viewer?url='
     URL=$(transfer $1)
-    xdg-open $GDOCS$URL
+    xdg-open $GDOCS$URL &>/dev/null
 }
+
