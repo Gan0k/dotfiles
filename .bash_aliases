@@ -8,6 +8,8 @@ alias pcat='curl -F "paste=<-" http://p.mvdan.cc'
 alias pcatclip='xsel -b | pcat | xsel -b'
 alias matlab='$HOME/Software/MATLAB/bin/matlab'
 alias git-root='cd $(git rev-parse --show-cdup)'
+alias pip3-upgradeall='pip3 list --outdated | cut -d "(" -f 1 | xargs -n1 sudo pip3 install --upgrade'
+alias pip2-upgradeall='pip2 list --outdated | cut -d "(" -f 1 | xargs -n1 sudo pip2 install --upgrade'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
