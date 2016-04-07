@@ -247,3 +247,6 @@ openDocx() {
     xdg-open $GDOCS$URL &>/dev/null
 }
 
+# Welcome screen
+curl -s wttr.in/London | head -7
+
