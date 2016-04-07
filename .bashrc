@@ -248,5 +248,5 @@ openDocx() {
 }
 
 # Welcome screen
-curl -s wttr.in/London | head -7
+curl -s wttr.in/London -m 5 | head -7
 
