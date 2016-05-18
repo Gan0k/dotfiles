@@ -7,6 +7,6 @@
 [submodule ".vim/plugged/delimitMate"]
 	path = .vim/plugged/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule ".vim/plugged/vim-gitgutter"]
-	path = .vim/plugged/vim-gitgutter
-	url = git@github.com:airblade/vim-gitgutter.git
+[submodule ".vim/plugged/vim-argwrap"]
+	path = .vim/plugged/vim-argwrap
+	url = git@github.com:FooSoft/vim-argwrap.git

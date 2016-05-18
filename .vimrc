@@ -7,12 +7,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'mrtazz/simplenote.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'airblade/vim-gitgutter'
+Plug 'FooSoft/vim-argwrap'
 
 call plug#end()
 
 set nocompatible
 set number ruler smartindent
+set relativenumber
 set autoindent
 set wrap linebreak nolist nojoinspaces
 set nobackup noswapfile nowritebackup
@@ -76,6 +77,9 @@ vnoremap // y/<C-R>"<CR>
 
 " Set refresh time higher for vim-gitgutter
 set updatetime=250
+
+" ArgWrap quick command
+nnoremap <silent> <leader>a :ArgWrap<CR>
 
 " Toggle Hexmode command
 command -bar Hexmode call ToggleHex()
