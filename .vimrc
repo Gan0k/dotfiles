@@ -29,6 +29,9 @@ set background=dark
 set encoding=utf-8
 set incsearch ignorecase smartcase showmatch hlsearch
 
+" Better autocompletion w/ ^+x ^+o
+set omnifunc=syntaxcomplete#Complete
+
 " Disable unused options
 nnoremap <F1> <nop>
 nnoremap Q <nop>
