@@ -10,3 +10,6 @@
 [submodule ".vim/plugged/vim-argwrap"]
 	path = .vim/plugged/vim-argwrap
 	url = git@github.com:FooSoft/vim-argwrap.git
+[submodule ".vim/plugged/cntrlp.vim"]
+	path = .vim/plugged/ctrlp.vim
+	url = git@github.com:ctrlpvim/ctrlp.vim
