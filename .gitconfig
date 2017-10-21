@@ -1,23 +1,27 @@
 [user]
-	name = Guido Arnau
-	email = guido.arnau@gmail.com
+    name = Guido Arnau
+    email = guido.arnau@gmail.com
 
 [core]
-	editor = vim
-	whitespace=-indent-with-non-tab,trailing-space,tabwidth=4
+    editor = vim
+    whitespace=-indent-with-non-tab,trailing-space,tabwidth=4
 
 [color]
-	ui = true
+    ui = true
 
 [filter "tabspace"]
-	smudge = unexpand --tabs=4 --first-only
-	clean = expand --tabs=4 --initial
+    smudge = unexpand --tabs=4 --first-only
+    clean = expand --tabs=4 --initial
 
 [color "diff"]
-	whitespace = red reverse
+    whitespace = red reverse
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
+    indentHeuristic = true
+
+[commit]
+    verbose = true
 
 [push]
-	default = current
+    default = current
