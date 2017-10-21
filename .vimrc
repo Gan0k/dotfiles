@@ -5,10 +5,7 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'mrtazz/simplenote.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'FooSoft/vim-argwrap'
-Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
