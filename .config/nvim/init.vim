@@ -1,9 +1,12 @@
+execute pathogen#infect()
+
 syntax on
 set synmaxcol=500
 filetype plugin indent on
 
+set nocompatible
 set encoding=utf-8
-set ruler number smartindent
+set ruler number smartindent autoindent
 set wrap linebreak nolist nojoinspaces
 set nobackup noswapfile nowritebackup
 set history=2000
@@ -16,8 +19,8 @@ set mouse=
 set rulerformat=%17(%l,%c%V\ %o\ %p%%%)
 
 set t_Co=16
-set background=light
-" set background=dark
+set background=dark
+colorscheme solarized
 
 " Better autocompletion w/ ^+x ^+o
 set omnifunc=syntaxcomplete#Complete
