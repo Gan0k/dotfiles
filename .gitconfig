@@ -3,7 +3,7 @@
     email = guido.arnau@gmail.com
 
 [core]
-    editor = vim
+    editor = nvim
     whitespace=-indent-with-non-tab,trailing-space,tabwidth=4
 
 [color]
@@ -17,7 +17,7 @@
     whitespace = red reverse
 
 [diff]
-    tool = vimdiff
+    tool = nvim -d
     indentHeuristic = true
 
 [commit]

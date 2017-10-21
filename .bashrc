@@ -4,9 +4,10 @@ case $- in
       *) return;;
 esac
 
-# vim as default editor
-export VISUAL=vim
+# nvim as default editor
+export VISUAL=nvim
 export EDITOR="$VISUAL"
+export DIFF_VIEWER="$VISUAL -d"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
