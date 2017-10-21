@@ -46,7 +46,7 @@ shopt -s cdspell
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -64,6 +64,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias rgrep='egrep --color=always'
 fi
 
+[[ -n $TMUX ]] && export TERM=screen-256color
+
+# helper funtions
+function mkcd() { mkdir -p "$1" && cd "$1"; }
 function search() { find . -iname "*$@*" | cat; }
 
 #apt-history command
@@ -106,121 +110,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# If this is an xterm set more declarative titles
-# "dir: last_cmd" and "actual_cmd" during execution
-# If you want to exclude a cmd from being printed see line 156
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\$(print_title)\a\]$PS1"
-    __el_LAST_EXECUTED_COMMAND=""
-    print_title ()
-    {
-        __el_FIRSTPART=""
-        __el_SECONDPART=""
-        if [ "$PWD" == "$HOME" ]; then
-            __el_FIRSTPART=$(gettext --domain="pantheon-files" "Home")
-        else
-            if [ "$PWD" == "/" ]; then
-                __el_FIRSTPART="/"
-            else
-                __el_FIRSTPART="${PWD##*/}"
-            fi
-        fi
-        if [[ "$__el_LAST_EXECUTED_COMMAND" == "" ]]; then
-            echo "$__el_FIRSTPART"
-            return
-        fi
-        #trim the command to the first segment and strip sudo
-        if [[ "$__el_LAST_EXECUTED_COMMAND" == sudo* ]]; then
-            __el_SECONDPART="${__el_LAST_EXECUTED_COMMAND:5}"
-            __el_SECONDPART="${__el_SECONDPART%% *}"
-        else
-            __el_SECONDPART="${__el_LAST_EXECUTED_COMMAND%% *}"
-        fi
-        printf "%s: %s" "$__el_FIRSTPART" "$__el_SECONDPART"
-    }
-    put_title()
-    {
-        __el_LAST_EXECUTED_COMMAND="${BASH_COMMAND}"
-        printf "\033]0;%s\007" "$1"
-    }
-
-    # Show the currently running command in the terminal title:
-    # http://www.davidpashley.com/articles/xterm-titles-with-bash.html
-    update_tab_command()
-    {
-        # catch blacklisted commands and nested escapes
-        case "$BASH_COMMAND" in
-            *\033]0*|update_*|echo*|printf*|clear*|cd*)
-            __el_LAST_EXECUTED_COMMAND=""
-                ;;
-            *)
-            put_title "${BASH_COMMAND}"
-            ;;
-        esac
-    }
-    preexec_functions+=(update_tab_command)
-    ;;
-*)
-    ;;
-esac
-
-# transfer.sh upload files and folders alias
-transfer() {
-    # check arguments
-    if [ $# -eq 0 ];
-    then
-        echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
-        return 1
-    fi
-
-    # get temporarily filename, output is written to this file show progress can be showed
-    tmpfile=$( mktemp -t transferXXX )
-
-    # upload stdin or file
-    file=$1
-
-    if tty -s;
-    then
-        basefile=$(basename "$file" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
-
-        if [ ! -e $file ];
-        then
-            echo "File $file doesn't exists."
-            return 1
-        fi
-
-        if [ -d $file ];
-        then
-            # zip directory and transfer
-            zipfile=$( mktemp -t transferXXX.zip )
-            cd $(dirname $file) && zip -r -q - $(basename $file) >> $zipfile
-            curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/$basefile.zip" >> $tmpfile
-            rm -f $zipfile
-        else
-            # transfer file
-            curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
-        fi
-    else
-        # transfer pipe
-        curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
-    fi
-
-    # cat output link
-    cat $tmpfile
-
-    # cleanup
-    rm -f $tmpfile
-}
-
-# open MSOffice files in browser
-openDocx() {
-    GDOCS='https://docs.google.com/viewer?url='
-    URL=$(transfer $1)
-    xdg-open $GDOCS$URL &>/dev/null
-}
-
-# Welcome screen
-curl -s wttr.in/London -m 1 | head -7
-
 PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \[\033[0;36m\]\h \w\[\033[0;32m\]$(__git_ps1)\n\[\033[0;32m\]└─\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\] \[\033[0m\] '
+

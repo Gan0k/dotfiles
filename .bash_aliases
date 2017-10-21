@@ -1,12 +1,9 @@
 alias ll='ls -alF'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -F'
 alias cd..="cd .."
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
-alias pcat='curl -F "paste=<-" http://p.mvdan.cc'
-alias pcatclip='xsel -b | pcat | xsel -b'
-alias matlab='$HOME/Software/MATLAB/bin/matlab'
 alias git-root='cd $(git rev-parse --show-cdup)'
 alias pip3-upgradeall='pip3 list --outdated | cut -d "(" -f 1 | xargs -n1 sudo pip3 install --upgrade'
 alias pip2-upgradeall='pip2 list --outdated | cut -d "(" -f 1 | xargs -n1 sudo pip2 install --upgrade'
