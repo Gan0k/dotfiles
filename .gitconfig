@@ -25,3 +25,6 @@
 
 [push]
     default = current
+
+[grep]
+    linenumber = true
