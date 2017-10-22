@@ -18,12 +18,19 @@ set incsearch ignorecase smartcase showmatch hlsearch
 set mouse=
 set rulerformat=%17(%l,%c%V\ %o\ %p%%%)
 
+" Theme stuff
 set t_Co=16
 set background=dark
 colorscheme solarized
 
 " Better autocompletion w/ ^+x ^+o
 set omnifunc=syntaxcomplete#Complete
+
+" Search down into subfolders
+set path+=**
+
+" Run ctags command
+command! MakeTags !ctags -R .
 
 " Disable unused options
 nnoremap <F1> <nop>
@@ -46,9 +53,15 @@ set scrolloff=4
 
 " Special file formats
 set wildignore=*.swp,*.bak,*.pyc,*.o,*.so
-au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.md set filetype=markdown | setlocal spell
 au BufNewFile,BufRead *.gradle set filetype=groovy
 au BufNewFile,BufRead *.pl set filetype=prolog
+
+" Spell check git commits
+autocmd FileType gitcommit setlocal spell
+
+" Auto-complete words when spell check enabled
+set complete+=kspell
 
 " Do not replace buffer contents when pasting
 xnoremap p pgvy
@@ -61,4 +74,3 @@ nnoremap <F9> 3<C-W><
 nnoremap <F10> 3<C-W>+
 nnoremap <F11> 3<C-W>-
 nnoremap <F12> 3<C-W>>
-
