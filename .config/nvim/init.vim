@@ -10,7 +10,7 @@ set nobackup noswapfile nowritebackup
 set history=2000
 set expandtab tabstop=4 softtabstop=4 shiftwidth=4
 set textwidth=78 formatoptions-=t formatoptions+=j
-set showcmd showmode hidden wildmenu
+set showcmd showmode hidden wildmenu wildignorecase
 set autoread magic matchtime=2
 set incsearch ignorecase smartcase showmatch hlsearch
 set mouse=
@@ -23,9 +23,6 @@ colorscheme solarized
 
 " Better autocompletion w/ ^+x ^+o
 set omnifunc=syntaxcomplete#Complete
-
-" Search down into subfolders
-set path+=**
 
 " Run ctags command
 command! MakeTags !ctags -R .
@@ -55,9 +52,8 @@ set ttimeout timeoutlen=300
 set scrolloff=4
 
 " Special file formats
-set wildignore=*.swp,*.bak,*.pyc,*.o,*.so
+set wildignore=*.swp,*.bak,*.pyc,*.o,*.so,*/.git/**/*
 au BufNewFile,BufRead *.md set filetype=markdown | setlocal spell
-au BufNewFile,BufRead *.gradle set filetype=groovy
 au BufNewFile,BufRead *.pl set filetype=prolog
 
 " Spell check git commits
@@ -77,3 +73,15 @@ nnoremap <F9> 3<C-W><
 nnoremap <F10> 3<C-W>+
 nnoremap <F11> 3<C-W>-
 nnoremap <F12> 3<C-W>>
+
+" Search down into subfolders
+set path+=**
+
+" shortcuts to bring up find command
+nnoremap <leader>f :find *
+nnoremap <leader>s :sfind *
+nnoremap <leader>v :vert sfind *
+nnoremap <leader>t :tabfind *<Paste>
+
+" open list to naviate between buffers
+nnoremap gb :ls<CR>:b<Space>
