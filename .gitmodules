@@ -10,3 +10,6 @@
 [submodule ".local/share/nvim/site/pack/plugins/start/yats"]
 	path = .local/share/nvim/site/pack/plugins/start/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
+[submodule ".local/share/nvim/site/pack/plugins/start/ale"]
+	path = .local/share/nvim/site/pack/plugins/start/ale
+	url = git@github.com:w0rp/ale.git
