@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
 
-TOSYMLINK="
+TO_SYMLINK="
 .bash_aliases
 .bash_profile
-.bashrc
 .config/nvim
-.gitconfig
 .local/share/nvim/site/pack
-.rtorrent.rc
-.ssh
 .tmux.conf
 "
 
-for file in $TOSYMLINK
-do
-    ln -s $(pwd)/$file $HOME/$file
-done
+SCRIPT_CWD=$(dirname $(realpath "$0"))
 
+for file in ${TO_SYMLINK}
+do
+    ln -s ${SCRIPT_CWD}/$file $HOME/$file
+done
