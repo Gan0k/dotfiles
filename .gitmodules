@@ -7,3 +7,6 @@
 [submodule ".config/nvim/bundle/delimitMate"]
 	path = .config/nvim/bundle/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
+[submodule ".config/nvim/bundle/yats"]
+	path = .config/nvim/bundle/yats
+	url = git@github.com:HerringtonDarkholme/yats.vim.git
