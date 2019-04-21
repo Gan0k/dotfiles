@@ -13,3 +13,6 @@
 [submodule ".local/share/nvim/site/pack/plugins/start/ale"]
 	path = .local/share/nvim/site/pack/plugins/start/ale
 	url = git@github.com:w0rp/ale.git
+[submodule ".local/share/nvim/site/pack/plugins/start/vim-fugitive"]
+	path = .local/share/nvim/site/pack/plugins/start/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive.git
