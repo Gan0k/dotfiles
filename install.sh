@@ -4,11 +4,12 @@ TOSYMLINK="
 .bash_aliases
 .bash_profile
 .bashrc
-.gitconfig
-.rtorrent.rc
-.tmux.conf
 .config/nvim
+.gitconfig
+.local/share/nvim/site/pack
+.rtorrent.rc
 .ssh
+.tmux.conf
 "
 
 for file in $TOSYMLINK

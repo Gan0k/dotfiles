@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 syntax on
 set synmaxcol=500
 filetype plugin indent on

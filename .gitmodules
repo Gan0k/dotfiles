@@ -1,12 +1,12 @@
-[submodule ".config/nvim/bundle/vim-colors-solarized"]
-	path = .config/nvim/bundle/vim-colors-solarized
+[submodule ".local/share/nvim/site/pack/plugins/start/vim-colors-solarized"]
+	path = .local/share/nvim/site/pack/plugins/start/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule ".config/nvim/bundle/vim-trailing-whitespace"]
-	path = .config/nvim/bundle/vim-trailing-whitespace
+[submodule ".local/share/nvim/site/pack/plugins/start/vim-trailing-whitespace"]
+	path = .local/share/nvim/site/pack/plugins/start/vim-trailing-whitespace
 	url = git@github.com:bronson/vim-trailing-whitespace.git
-[submodule ".config/nvim/bundle/delimitMate"]
-	path = .config/nvim/bundle/delimitMate
+[submodule ".local/share/nvim/site/pack/plugins/start/delimitMate"]
+	path = .local/share/nvim/site/pack/plugins/start/delimitMate
 	url = git@github.com:Raimondi/delimitMate.git
-[submodule ".config/nvim/bundle/yats"]
-	path = .config/nvim/bundle/yats
+[submodule ".local/share/nvim/site/pack/plugins/start/yats"]
+	path = .local/share/nvim/site/pack/plugins/start/yats
 	url = git@github.com:HerringtonDarkholme/yats.vim.git
