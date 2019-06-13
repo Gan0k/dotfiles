@@ -52,7 +52,7 @@ set ttimeout timeoutlen=300
 set scrolloff=4
 
 " Special file formats
-set wildignore=*.swp,*.bak,*.pyc,*.o,*.so,*/.git/**/*
+set wildignore=*.swp,*.bak,*.pyc,*.o,*.so,*/.git/**/*,*/node_modules/**/*,*/build/**/*
 au BufNewFile,BufRead *.md set filetype=markdown | setlocal spell
 au BufNewFile,BufRead *.pl set filetype=prolog
 
