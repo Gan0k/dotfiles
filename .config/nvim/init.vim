@@ -66,11 +66,17 @@ xnoremap p pgvy
 " Search visually selected text
 vnoremap // y/<C-R>"<CR>
 
-" Split window shortcuts
+" Split window shortcuts for resizing
 nnoremap <F9> 3<C-W><
 nnoremap <F10> 3<C-W>+
 nnoremap <F11> 3<C-W>-
 nnoremap <F12> 3<C-W>>
+
+" Split window shortcuts for moving
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Search down into subfolders
 set path+=**
