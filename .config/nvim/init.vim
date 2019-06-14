@@ -32,10 +32,8 @@ nnoremap <F1> <nop>
 nnoremap Q <nop>
 nnoremap K <nop>
 
-set grepprg=git\ grep
-
-" Bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR><CR>:cw<CR>
+" Bind K to :Ggrep the word under cursor (requires vim-fugitive)
+nnoremap K :Ggrep! "\b<C-R><C-W>\b"<CR><CR>:cw<CR>
 
 " Make backspace key work the way it should
 set backspace=eol,start,indent
