@@ -89,3 +89,6 @@ nnoremap <leader>t :tabfind *<Paste>
 
 " open list to naviate between buffers
 nnoremap gb :ls<CR>:b<Space>
+
+" use Esc to quit terminal mode when opening a terminal in a buffer
+:tnoremap <Esc> <C-\><C-n>
