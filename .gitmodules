@@ -16,3 +16,9 @@
 [submodule "nvim/.local/share/nvim/site/pack/plugins/start/ale"]
 	path = nvim/.local/share/nvim/site/pack/plugins/start/ale
 	url = git@github.com:dense-analysis/ale.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/thrift-vim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/thrift-vim
+	url = git@github.com:solarnz/thrift.vim.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/kotlin-vim"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/kotlin-vim
+	url = git@github.com:udalov/kotlin-vim.git
