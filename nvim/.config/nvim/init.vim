@@ -92,3 +92,5 @@ nnoremap gb :ls<CR>:b<Space>
 
 " use Esc to quit terminal mode when opening a terminal in a buffer
 :tnoremap <Esc> <C-\><C-n>
+
+let g:airline#extensions#tabline#enabled = 1

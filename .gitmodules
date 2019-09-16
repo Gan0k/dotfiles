@@ -22,3 +22,9 @@
 [submodule "nvim/.local/share/nvim/site/pack/plugins/start/kotlin-vim"]
 	path = nvim/.local/share/nvim/site/pack/plugins/start/kotlin-vim
 	url = git@github.com:udalov/kotlin-vim.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/airline"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "nvim/.local/share/nvim/site/pack/plugins/start/airline-themes"]
+	path = nvim/.local/share/nvim/site/pack/plugins/start/airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
