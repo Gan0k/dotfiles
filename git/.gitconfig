@@ -6,6 +6,9 @@
     editor = nvim
     whitespace=-indent-with-non-tab,trailing-space,tabwidth=4
 
+[alias]
+    g = grep --break --heading --line-number
+
 [color]
     ui = true
 
@@ -15,6 +18,11 @@
 
 [color "diff"]
     whitespace = red reverse
+
+[color "grep"]
+    linenumber = yellow bold
+    match = red
+    filename = magenta
 
 [diff]
     tool = nvim -d
@@ -28,3 +36,4 @@
 
 [grep]
     linenumber = true
+    extendRegexp = true
