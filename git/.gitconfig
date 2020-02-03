@@ -37,3 +37,6 @@
 [grep]
     linenumber = true
     extendRegexp = true
+
+[protocol]
+    version = 2
